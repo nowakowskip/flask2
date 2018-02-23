@@ -45,6 +45,7 @@ def article(id):
     result = cur.execute("SELECT * FROM articles WHERE id = %s", [id])
     article = cur.fetchone()
     return render_template('article.html', article=article)
+    cur.close()
 
 #register form calss
 class RegisterForm(Form):
@@ -182,7 +183,6 @@ def add_article():
         return redirect('dashboard')
 
     return render_template('add_article.html', form=form)
-
 
 if __name__ == '__main__':
     app.secret_key='secret123'

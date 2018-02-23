@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1> articles </h1>
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+
+
+    {% for article in articles %}
+            <div class="col-md-4">
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.bodyshort }} </p>
+            <p><a class="btn btn-secondary" href="article/{{article.id}}" role="button">View details &raquo;</a></p>
+            </div>
+    {% endfor %}
+        </div></div>
+{% endblock %}
